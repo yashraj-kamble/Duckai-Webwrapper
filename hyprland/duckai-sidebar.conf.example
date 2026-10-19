@@ -1,0 +1,82 @@
+# =============================================================================
+# hyprland/duckai-sidebar.conf.example
+# Hyprland window rules for DuckAI as a pinned sidebar
+# =============================================================================
+#
+# BEFORE YOU USE THIS FILE
+# ─────────────────────────
+# You must find the actual app_class (WM_CLASS) that Tauri/WebKitGTK assigns
+# to the DuckAI window on your system.
+#
+# Steps:
+#   1.  Launch DuckAI:          duckai
+#   2.  In another terminal:    hyprctl clients
+#   3.  Find the DuckAI entry and copy its "class:" value.
+#       It typically looks like "duckai" or "DuckAI" — confirm on your system.
+#   4.  Replace every REPLACE_WITH_CLASS placeholder below with that value.
+#
+# Then add these rules to your Hyprland config in one of two ways:
+#   • Paste the block directly into ~/.config/hypr/hyprland.conf
+#   • Or source this file:
+#       source = ~/.config/hypr/duckai-sidebar.conf
+#     (copy or symlink this file to that location first)
+#
+# Reload Hyprland after editing:   hyprctl reload
+#
+# =============================================================================
+# SYNTAX NOTE — Modern Hyprland (≥ 0.41, recommended)
+# =============================================================================
+# These rules use the unified "windowrule" keyword introduced in Hyprland 0.41.
+# Each rule targets windows whose class matches the given regular expression.
+#
+# If you are running an older Hyprland release (before 0.41) you may see parse
+# errors.  In that case replace each block below with the windowrulev2 format:
+#
+#   windowrulev2 = float,       class:^(REPLACE_WITH_CLASS)$
+#   windowrulev2 = size 420 95%,class:^(REPLACE_WITH_CLASS)$
+#   windowrulev2 = move 0 2%,   class:^(REPLACE_WITH_CLASS)$
+#   windowrulev2 = pin,         class:^(REPLACE_WITH_CLASS)$
+#
+# Do NOT mix the two syntaxes in the same config file — pick one or the other.
+# =============================================================================
+
+# ── Sidebar rules (modern syntax, Hyprland ≥ 0.41) ───────────────────────────
+
+# Float the window so Hyprland treats it as a free-floating overlay.
+windowrule = float, match:class ^(REPLACE_WITH_CLASS)$
+
+# Size: 420 px wide, 95% of the monitor height (leaves a small gap for bars).
+# If you prefer a pixel height, replace 95% with an integer, e.g. 1020.
+windowrule = size 420 95%, match:class ^(REPLACE_WITH_CLASS)$
+
+# Move: flush against the left edge (x=0), 2% from the top.
+# To pin to the RIGHT edge, change 0 to: monitor_width - 420
+# In Hyprland expressions: calc(100% - 420px) — use a pixel value if easier.
+windowrule = move 0 2%, match:class ^(REPLACE_WITH_CLASS)$
+
+# Pin: keep the window visible on every workspace (it won't disappear when you
+# switch workspaces).  Remove or comment this line if you only want the sidebar
+# on the current workspace.
+windowrule = pin, match:class ^(REPLACE_WITH_CLASS)$
+
+# ── Optional rules ────────────────────────────────────────────────────────────
+
+# Prevent Hyprland from animating the window (feels more sidebar-like):
+# windowrule = noanim, match:class ^(REPLACE_WITH_CLASS)$
+
+# Keep it on top of tiled windows without pinning to all workspaces:
+# windowrule = stayfocused, match:class ^(REPLACE_WITH_CLASS)$
+
+# Assign to a specific workspace instead of pinning everywhere:
+# windowrule = workspace 2 silent, match:class ^(REPLACE_WITH_CLASS)$
+
+# ── Example with a real class name (DO NOT use verbatim) ─────────────────────
+# If hyprctl clients reports class: duckai, your rules would look like:
+#
+#   windowrule = float,       match:class ^(duckai)$
+#   windowrule = size 420 95%,match:class ^(duckai)$
+#   windowrule = move 0 2%,   match:class ^(duckai)$
+#   windowrule = pin,         match:class ^(duckai)$
+#
+# Replace "duckai" with whatever hyprctl clients actually shows for DuckAI.
+# =============================================================================

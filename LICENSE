@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 yashraj-kamble
+Copyright (c) 2024 duckai-sidebar contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,26 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+────────────────────────────────────────────────────────────────────────────────
+IMPORTANT DISCLAIMER
+────────────────────────────────────────────────────────────────────────────────
+
+This license covers ONLY the build scripts, install scripts, Hyprland
+configuration examples, and documentation contained in this repository.
+
+It does NOT cover:
+
+  • Duck.ai (https://duck.ai) — a service owned and operated by DuckDuckGo.
+    All content, trademarks, and intellectual property of Duck.ai remain the
+    exclusive property of DuckDuckGo, Inc. and are subject to their own Terms
+    of Service and Privacy Policy.
+
+  • Pake (https://github.com/tw93/Pake) — the underlying packaging tool.
+    Pake is licensed separately under the MIT License by its author (Tw93).
+
+  • Tauri (https://tauri.app) — the application framework used by Pake.
+    Tauri is licensed under MIT/Apache-2.0 by the Tauri Programme contributors.
+
+This project is an unofficial, community-created wrapper. It is not affiliated
+with, endorsed by, or sponsored by DuckDuckGo, Inc. in any way.
