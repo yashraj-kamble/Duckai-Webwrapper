@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE5833"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+    <linearGradient id="beak" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <!-- AI Sparks / Stars in background -->
+  <path d="M96 28 L98 34 L104 36 L98 38 L96 44 L94 38 L88 36 L94 34 Z" fill="#FED7AA" opacity="0.85"/>
+  <path d="M26 84 L27.5 88.5 L32 90 L27.5 91.5 L26 96 L24.5 91.5 L20 90 L24.5 88.5 Z" fill="#FED7AA" opacity="0.6"/>
+
+  <!-- Duck Head & Body Silhouette -->
+  <g fill="#FFFFFF">
+    <!-- Body -->
+    <path d="M36 82 C36 68 48 58 64 58 C80 58 92 68 92 82 C92 92 82 98 64 98 C46 98 36 92 36 82 Z"/>
+    <!-- Head -->
+    <circle cx="64" cy="46" r="22"/>
+  </g>
+
+  <!-- Beak -->
+  <path d="M44 48 C36 48 30 46 26 44 C30 41 36 40 44 40 Z" fill="url(#beak)"/>
+
+  <!-- Eye -->
+  <circle cx="56" cy="42" r="3.5" fill="#1F2937"/>
+  <circle cx="57.2" cy="40.8" r="1.2" fill="#FFFFFF"/>
+
+  <!-- AI Chat badge / sparkle near beak -->
+  <circle cx="98" cy="88" r="14" fill="#3B82F6"/>
+  <path d="M98 80 L100 85 L105 87 L100 89 L98 94 L96 89 L91 87 L96 85 Z" fill="#FFFFFF"/>
+</svg>

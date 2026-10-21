@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Duck.ai Sidebar
+Comment=Native Wayland sidebar panel for Duck.ai AI chat
+Exec=duckai-sidebar --toggle
+Icon=duckai-sidebar
+Terminal=false
+Type=Application
+Categories=Network;Chat;Utility;
+Keywords=duckai;duckduckgo;ai;chat;sidebar;wayland;hyprland;layer-shell;
+StartupNotify=false
+X-GNOME-UsesNotifications=true
